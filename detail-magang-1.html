@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Magang Perusahaan 1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/a327b617be.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-gray-100">
+
+    <div class="flex h-screen bg-gray-50">
+        <aside class="w-64 bg-gray-800 text-white transition-transform duration-300 md:translate-x-0 fixed md:sticky top-0 left-0 h-full z-50 -translate-x-full md:translate-x-0" id="sidebar">
+            <div class="p-4 flex items-center justify-between">
+                <h2 class="text-xl font-bold">Arsip Kuliah</h2>
+                <button id="sidebar-close" class="md:hidden text-gray-400 hover:text-white focus:outline-none">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <ul class="space-y-2 px-2">
+                <li>
+                    <a href="home.html" class="block px-4 py-2 rounded-md hover:bg-gray-700 flex items-center transition duration-200">
+                        <i class="fas fa-home mr-2"></i> HOME
+                    </a>
+                </li>
+                <li>
+                    <a href="magang.html" class="block px-4 py-2 rounded-md hover:bg-gray-700 flex items-center transition duration-200">
+                        <i class="fas fa-briefcase mr-2"></i> MAGANG
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+         <div id="sidebar-overlay" class="fixed inset-0 bg-black opacity-50 z-40 hidden md:hidden"></div>
+
+        <main class="flex-1 p-8 overflow-y-auto">
+            <button id="sidebar-toggle" class="md:hidden text-gray-600 hover:text-gray-800 focus:outline-none mb-4">
+                <i class="fas fa-bars fa-2x"></i>
+            </button>
+            <h1 class="text-3xl font-bold mb-4">Detail Magang Perusahaan 1</h1>
+
+            <div class="bg-white rounded-lg shadow-md p-6 overflow-hidden">
+                <div class="overflow-x-auto">
+                    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSp10s6RfVXyD0cIaDwhUhs6K3omsPiC65qjm4oblVlTGKwNR4SWKGFLfMGcRO9FWdWpeoGp1jnyTSy/pubhtml?widget=true&amp;headers=false" width="100%" height="500"></iframe>
+
+                </div>
+            </div>
+            <a href="magang.html" class="inline-block mt-4 bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded">Kembali ke Daftar Magang</a>
+        </main>
+    </div>
+        <script>
+        const sidebar = document.getElementById('sidebar');
+        const sidebarToggle = document.getElementById('sidebar-toggle');
+        const sidebarClose = document.getElementById('sidebar-close');
+        const sidebarOverlay = document.getElementById('sidebar-overlay');
+
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('-translate-x-full');
+            sidebarOverlay.classList.toggle('hidden');
+        });
+
+        sidebarClose.addEventListener('click', () => {
+            sidebar.classList.add('-translate-x-full');
+            sidebarOverlay.classList.add('hidden');
+        });
+
+        sidebarOverlay.addEventListener('click', () => {
+             sidebar.classList.add('-translate-x-full');
+            sidebarOverlay.classList.add('hidden');
+        });
+    </script>
+</body>
+</html>

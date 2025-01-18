@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magang</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/a327b617be.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="flex h-screen bg-gray-50">
+
+        <aside class="w-64 bg-gray-800 text-white transition-transform duration-300 md:translate-x-0 fixed md:sticky top-0 left-0 h-full z-50 -translate-x-full md:translate-x-0" id="sidebar">
+            <div class="p-4 flex items-center justify-between">
+                <h2 class="text-xl font-bold">Arsip Kuliah</h2>
+                <button id="sidebar-close" class="md:hidden text-gray-400 hover:text-white focus:outline-none">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <ul class="space-y-2 px-2">
+                <li>
+                    <a href="home.html" class="block px-4 py-2 rounded-md hover:bg-gray-700 flex items-center transition duration-200">
+                        <i class="fas fa-home mr-2"></i> HOME
+                    </a>
+                </li>
+                <li>
+                    <a href="magang.html" class="block px-4 py-2 rounded-md hover:bg-gray-700 flex items-center transition duration-200">
+                        <i class="fas fa-briefcase mr-2"></i> MAGANG
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <div id="sidebar-overlay" class="fixed inset-0 bg-black opacity-50 z-40 hidden md:hidden"></div>
+
+        <main class="flex-1 p-4 overflow-y-auto">
+            <button id="sidebar-toggle" class="md:hidden text-gray-600 hover:text-gray-800 focus:outline-none mb-4">
+                <i class="fas fa-bars fa-2x"></i>
+            </button>
+            <h1 class="text-3xl font-bold mb-8 text-center">Informasi Magang</h1>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <a href="detail-magang-1.html" class="block">
+                    <div class="bg-white rounded-lg border-2 border-indigo-500 hover:scale-105 transition duration-300 hover:shadow-[4px_4px_0px_0px_#6366f1]">
+                        <div class="p-6 flex flex-col items-center">
+                            <img src="assets/images/logo-perusahaan-1.png" alt="Logo Perusahaan 1" class="w-24 h-auto max-w-full object-contain mb-4">
+                            <h2 class="text-xl font-bold text-gray-800 text-center mb-2">Nama Perusahaan 1</h2>
+                            <h3 class="text-lg text-gray-600 text-center mb-2">Posisi Magang 1</h3>
+                            <p class="text-gray-600 text-center mb-4">Deskripsi singkat tentang magang di perusahaan ini.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="detail-magang-2.html" class="block">
+                    <div class="bg-white rounded-lg border-2 border-indigo-500 hover:scale-105 transition duration-300 hover:shadow-[4px_4px_0px_0px_#6366f1]">
+                        <div class="p-6 flex flex-col items-center">
+                            <img src="assets/images/logo-perusahaan-2.png" alt="Logo Perusahaan 2" class="w-24 h-auto max-w-full object-contain mb-4">
+                            <h2 class="text-xl font-bold text-gray-800 text-center mb-2">Nama Perusahaan 2</h2>
+                            <h3 class="text-lg text-gray-600 text-center mb-2">Posisi Magang 2</h3>
+                            <p class="text-gray-600 text-center mb-4">Deskripsi singkat tentang magang di perusahaan ini.</p>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        const sidebarToggle = document.getElementById('sidebar-toggle');
+        const sidebarClose = document.getElementById('sidebar-close');
+        const sidebarOverlay = document.getElementById('sidebar-overlay');
+
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('-translate-x-full');
+            sidebarOverlay.classList.toggle('hidden');
+        });
+
+        sidebarClose.addEventListener('click', () => {
+            sidebar.classList.add('-translate-x-full');
+            sidebarOverlay.classList.add('hidden');
+        });
+
+        sidebarOverlay.addEventListener('click', () => {
+             sidebar.classList.add('-translate-x-full');
+            sidebarOverlay.classList.add('hidden');
+        });
+    </script>
+</body>
+</html>
